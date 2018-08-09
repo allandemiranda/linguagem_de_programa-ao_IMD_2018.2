@@ -46,7 +46,8 @@ size_t contar_negativos(const int *vetor, const size_t size){
 int main(void) {
 	int vetor_de_numeros[QUANTIDADE]; /*< Vetor para conter os números */
 	size_t tamanho_do_vetor = sizeof(vetor_de_numeros)/sizeof(int); /*< Calcular o tamanho do vetor */
-
+	
+	std::cout << "Digite " << QUANTIDADE << " números para verificação de negativos:" << std::endl;
 	incerir_numeros(std::begin(vetor_de_numeros), tamanho_do_vetor); /*< Adicionar números ao vetor */
 
 	size_t negativos = contar_negativos(std::begin(vetor_de_numeros), tamanho_do_vetor); /*< Verificar quatidade de negativos */
