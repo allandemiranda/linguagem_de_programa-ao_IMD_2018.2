@@ -26,25 +26,22 @@ int soma_consecultivos(const int inicial, const int sequencia){
  * @retunr 0
  **/
 int main(void){
-
     int tela(1); /*< Apontador da tela */
     int numero_um; /*< Receberá o primeiro número */
     int numero_dois; /*< Receberá a quantidade da sequência a anlisar */
-    while(true){
+    int numero; /*< Para ser recebido no cin do while */
+    std::cout << "Novo par de números: " << std::endl;
+    while(std::cin >> numero){
         if(tela==1){
-            ++tela;
+            ++tela; /*< Pular para tela 2 na próxima interação */            
+            numero_um = numero; 
+        } else {          
+            numero_dois = numero;                
+            std::cout << "Somatório final: ";
+            std::cout << soma_consecultivos(numero_um, numero_dois); /*< Resultado final */
+            std::cout << std::endl;
             std::cout << "Novo par de números: " << std::endl;
-            std::cin >> numero_um;
-        } else {
-            if(tela==2){
-                std::cin >> numero_dois;
-                ++tela;
-            } else {
-                std::cout << "Somatório final: ";
-                std::cout << soma_consecultivos(numero_um, numero_dois);
-                std::cout << std::endl;
-                tela=1;
-            }
+            tela=1; /*< voltar para tela 1 */         
         }   
     }
     return 0;
