@@ -18,23 +18,23 @@ void preencher_vetor(void){
     }
 }
 
-struct dados {
-    int valor;
-    int posicao;
-} analise;
-
-int verificar_menor(const int *inicio_p, const int *final_p){
-    analise.posicao = 0;
-    analise.valor = *inicio_p;
-    for(int i(1); i < (inicio_p-final_p); ++i){
-        if(analise.valor > *(inicio_p + i)){
-            analise.posicao = i;
-            analise.valor = *(inicio_p + i);
+/**
+ * @brief Função para verificar qual o menor elemento e retorna sua posição
+ * @param inicial_p Aponta para posição inicial do vetor
+ * @param final_p Aponta para posição final do vetor
+ * @return Retorna um ponteiro da posição do menor elemento encontrado primeiro
+ **/
+int * verificador_menor(int *inicial_p, int *final_p){
+    int valor = *inicial_p;
+    int *posicao = inicial_p;
+    for(int i(1); i<(final_p-inicial_p); ++i){
+        if(valor>*(inicial_p+i)){
+            valor = *(inicial_p + i);
+            posicao = (inicial_p + i);
         }
     }
-    return analise;
+    return posicao;
 }
-
 
 /**
  * @brief Função main
@@ -44,11 +44,11 @@ int verificar_menor(const int *inicio_p, const int *final_p){
 int main(void){
     std::cout << "Adicione números ao vetor: " << std::endl;
     int numero;
+    /*! receber n números */
     while(std::cin >> numero){
-        elementos.push_back(numero);
+        elementos.push_back(numero); /*< Adicionar os núemros ao vetor que será analisado */
     }
-    int valores_menores = verificar_menor(elementos.begin(), elementos.end());
-    std::cout << "Valor: " << valores_menores.valor << " ";
-    std::cout << "Posição: " << valores_menores.posicao << std::endl;
+    std::cout << "Menor valor: " << *(verificador_menor(&elementos.front(), &elementos.back()+1)) << std::endl;
+    std::cout << "Posição: " << (verificador_menor(&elementos.front(), &elementos.back()+1)) << std::endl;
     return 0;
 }
