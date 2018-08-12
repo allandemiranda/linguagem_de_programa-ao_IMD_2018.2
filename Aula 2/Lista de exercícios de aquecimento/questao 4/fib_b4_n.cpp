@@ -13,7 +13,7 @@ std::vector <int> sequencia_frib; /*< Quardará a sequencia de Fibonacci até o 
  * @param ate_numero A lista deve gerar núemros Fibonacci menores que este
  **/
 void criar_lista_frib(const int ate_numero){
-    sequencia_frib.erase();
+    sequencia_frib.clear();
     sequencia_frib.push_back(1);
     sequencia_frib.push_back(1);
     int interacao(0);
@@ -23,7 +23,7 @@ void criar_lista_frib(const int ate_numero){
         for(int i(0); i<2; ++i){
             somar += sequencia_frib[interacao - i];
         }
-        if(somar < ate_numero){
+        if(somar >= ate_numero){
             break;
         }
         sequencia_frib.push_back(somar);        
@@ -40,7 +40,7 @@ int main(void){
     int numero;
     std::cin >> numero;
     criar_lista_frib(numero);
-    std::cout << "Números Fibonacci anteriores a este: " << std:endl;
+    std::cout << "Números Fibonacci anteriores a este: " << std::endl;
     for(int i : sequencia_frib){
         std::cout << i << " ";
     }
