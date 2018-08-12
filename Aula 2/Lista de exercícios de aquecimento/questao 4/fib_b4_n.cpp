@@ -1,5 +1,5 @@
 /**
- * @file soma_pares.cpp
+ * @file fib_b4_n.cpp
  * @brief Questão 4 da lista
  * @copyright Allan de Miranda - BTI - IMD - UFRN - 2018.2
  **/
