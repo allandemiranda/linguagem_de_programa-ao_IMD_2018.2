@@ -11,13 +11,13 @@
 
 void receber_elementos(int *inicial){
     for(int i(0); i<INTEIROS; ++i){
-        std::cin >> *(ininial + i);
+        std::cin >> *(inicial + i);
     }
 }
 
 void imprimir_elementos(int *inicial){
     for(int i(0); i<INTEIROS; ++i){
-        std::cout << *(inicial + i);
+        std::cout << *(inicial + i) << " ";
     }
     std::cout << std::endl;
 }
