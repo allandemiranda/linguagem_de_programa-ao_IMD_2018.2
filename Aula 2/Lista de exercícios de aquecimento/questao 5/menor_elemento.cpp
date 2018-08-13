@@ -6,7 +6,7 @@
 #include <iostream> /*< Biblioteca usada para cout, cin e andl */
 #include <vector> /*< Biblioteca usada para vetores dinâmicos */
 
-std::vector <int> elementos; /*< vetor dinÂmico com todos os elementos */
+std::vector <int> Vet; /*< vetor dinÂmico com todos os elementos */
 
 /**
  * @brief Função para adicionar n elementos ao vetor de elementos para analise
@@ -14,7 +14,7 @@ std::vector <int> elementos; /*< vetor dinÂmico com todos os elementos */
 void preencher_vetor(void){
     int numero;
     while(std::cin >> numero){
-        elementos.push_back(numero);
+        Vet.push_back(numero);
     }
 }
 
@@ -43,12 +43,9 @@ int * verificador_menor(int *inicial_p, int *final_p){
  **/
 int main(void){
     std::cout << "Adicione números ao vetor: " << std::endl;
-    int numero;
     /*! receber n números */
-    while(std::cin >> numero){
-        elementos.push_back(numero); /*< Adicionar os núemros ao vetor que será analisado */
-    }
-    std::cout << "Menor valor: " << *(verificador_menor(&elementos.front(), &elementos.back()+1)) << std::endl;
-    std::cout << "Posição: " << (verificador_menor(&elementos.front(), &elementos.back()+1)) << std::endl;
+    preencher_vetor(); /*< Iniciar preencimento do vetor */
+    std::cout << "Menor valor: " << *(verificador_menor(&Vet.front(), &Vet.back()+1)) << std::endl;
+    std::cout << "Posição: " << (verificador_menor(&Vet.front(), &Vet.back()+1)) << std::endl;
     return 0;
 }
