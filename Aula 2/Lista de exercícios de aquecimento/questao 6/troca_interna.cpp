@@ -23,8 +23,8 @@ void imprimir_elementos(int *inicial){
 }
 
 void trocar_posicao(int *inicial){
-    for(int i(0), j(INFINITY-1); i!=j; ++i, --j){
-        std::swap((inicial+i),(inicial+j));
+    for(int i(0), j(INTEIROS-1); i!=j; ++i, --j){
+        std::swap(*(inicial+i),*(inicial+j));
     }
 }
 /**
