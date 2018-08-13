@@ -34,7 +34,7 @@ void imprimir_elementos(int *inicial){
  * @param Aponta para a posição inicial do vetor a ser usado na função
  **/
 void trocar_posicao(int *inicial){
-    for(int i(0), j(INTEIROS-1); i<j; ++i, --j){
+    for(int i(0), j(1); j<INTEIROS; i+=2, j+=2){
         std::iter_swap((inicial+i),(inicial+j));
     }
 }
