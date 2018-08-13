@@ -6,7 +6,7 @@
 #include <iostream> /*< Biblioteca usada para cout, cin e andl */
 #include <iterator>  /*< Biblioteca usada para begin e end */
 
-int * filter(const * int first, const * int last){
+int * filter(int * const first, int * const last){
     int *ponteiro_um = first;
     int *ponteiro_dois = first;
     int *ponteiro_tres = last;
@@ -20,7 +20,7 @@ int * filter(const * int first, const * int last){
             } else {
                 int *ponteiro_fake = ponteiro_um;
                 for(int i(0); (ponteiro_dois + i) != ponteiro_tres; ++i){
-                    *ponteiro_fake = *(ponteiro_dois + cont);
+                    *ponteiro_fake = *(ponteiro_dois + i);
                     ponteiro_fake++;
                 }                
                 ponteiro_tres = ponteiro_fake;
@@ -51,7 +51,7 @@ int * filter(const * int first, const * int last){
 int main(void){
     int vetor_teste[] = {-2, -8, 6, 7, -3, 10, 1, 0, -3, 7};
     int *last;
-    last = filter(std::begin(vetor_teste), std:end(vetor_teste));
+    last = filter(std::begin(vetor_teste), std::end(vetor_teste));
     for(int i(0); (std::begin(vetor_teste) + i) != last; ++i){
         std::cout << vetor_teste[i] << " ";
     }
