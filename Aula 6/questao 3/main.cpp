@@ -14,7 +14,7 @@
  * @param last Aponta para o elemento seguinte ao últimmo a ser analisado
  */
 void reverse(int *first, int *last){
-    for(int i(0), j(std::distance(first,last)-1); i<j; ++i, --j){
+    for(int i(0), j(std::distance(first,last)-1); i<j; ++i, --j){ // enquanto 'i' cresce o 'j' desce o vetor em direções opostas
         std::swap(*(first+i),*(first+j));
     }
 }
