@@ -4,7 +4,7 @@
  * @copyright Allan de Miranda - BTI - IMD - UFRN - 2018.2
  */
 #include <iostream> // std::cout , std::cin 
-#include <iterator> // std::begin() , std::end();
+#include <iterator> // std::begin() , std::end(), std::distance()
 #include <algorithm> // std::swap
 
 /**

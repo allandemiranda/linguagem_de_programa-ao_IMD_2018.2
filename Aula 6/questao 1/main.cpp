@@ -4,7 +4,7 @@
  * @copyright Allan de Miranda - BTI - IMD - UFRN - 2018.2
  */
 #include <iostream> // std::cout , std::cin 
-#include <iterator> // std::begin() , std::end();
+#include <iterator> // std::begin() , std::end(), std::distance()
 
 /**
  * @brief Função que nega o sinal de todos os elementos no intervalo
