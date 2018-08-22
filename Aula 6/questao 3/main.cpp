@@ -14,8 +14,8 @@
  * @param last Aponta para o elemento seguinte ao últimmo a ser analisado
  */
 void reverse(int *first, int *last){
-    for(int *i(first), *j(last); i!=j; ++i, --j){
-        std::swap(i,j);
+    for(int i(0), j(std::distance(first,last)-1); i<j; ++i, --j){
+        std::swap(*(first+i),*(first+j));
     }
 }
 
