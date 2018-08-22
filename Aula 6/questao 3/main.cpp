@@ -5,6 +5,17 @@
  */
 #include <iostream> // std::cout , std::cin 
 #include <iterator> // std::begin() , std::end();
+#include <algorithm> // std::swap
+
+/**
+ * @brief Função que inverte a ordem dos elementos no intervalo
+ * 
+ * @param first Aponta para o primeiro elemento a analisar
+ * @param last Aponta para o elemento seguinte ao últimmo a ser analisado
+ */
+void reverse(int *first, int *last){
+
+}
 
 int main(void){
     int A[] = {1, 2, 3, 4, 5};
