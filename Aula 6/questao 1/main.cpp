@@ -13,7 +13,7 @@
  * @param last  Aponta para posição seuinte a última posição do vetor
  */
 void negate(int * first, int * last){
-    for(int i(0); i<std::distance(first, last);  ++i){
+    for(int i(0); i<std::distance(first, last);  ++i){ // OBS: Outra forma é usando o int *i e retirando a distância entre os ponteiros
         if(*(first+i)<0){ // Verificar se o número é negativo
             *(first+i) = *(first+i) * (-1); /*< Transformar o número em positivo */
         }
