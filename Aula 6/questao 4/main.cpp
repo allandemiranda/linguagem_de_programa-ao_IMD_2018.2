@@ -14,7 +14,9 @@
  * @param scalar Valor inteiro a ser multiplicado pelos elementos do intervalo
  */
 void scalar_multiplication(int *first, int *last, int scalar){
-
+    for(int i(0); i<std::distance(first, last); ++i){ // Percorer todo o vetor
+        *(first+i) = *(first+i) * (scalar); // Efetuar a operação
+    }
 }
 
 int main(void){
