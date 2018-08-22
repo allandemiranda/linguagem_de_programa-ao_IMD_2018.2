@@ -15,7 +15,7 @@
  */
 void scalar_multiplication(int *first, int *last, int scalar){
     for(int i(0); i<std::distance(first, last); ++i){ // Percorer todo o vetor
-        *(first+i) = *(first+i) * (scalar); // Efetuar a operação
+        *(first+i) *= scalar; // Efetuar a operação
     }
 }
 
