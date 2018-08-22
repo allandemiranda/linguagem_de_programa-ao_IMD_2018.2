@@ -14,14 +14,16 @@
  * @param last Aponta para o elemento seguinte ao últimmo a ser analisado
  */
 void reverse(int *first, int *last){
-
+    for(int *i(first), *j(last); i!=j; ++i, --j){
+        std::swap(i,j);
+    }
 }
 
 int main(void){
     int A[] = {1, 2, 3, 4, 5};
 
     // Aplicar reverse sobre todo o vetor
-    reverse(std::begin(A), std::endl(A));
+    reverse(std::begin(A), std::end(A));
 
     // O comando a baixo deverá imprimir o vetor A com o conteúdo 5, 4, 3, 2, 1
     for(auto i(std::begin(A)); i != std::end(A); ++i){
