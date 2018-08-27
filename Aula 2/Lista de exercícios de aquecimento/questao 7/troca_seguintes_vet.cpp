@@ -35,7 +35,7 @@ void imprimir_elementos(int *inicial){
  **/
 void trocar_posicao(int *inicial){
     for(int i(0), j(1); j<INTEIROS; i+=2, j+=2){
-        std::iter_swap((inicial+i),(inicial+j));
+        std::swap(*(inicial+i),*(inicial+j));
     }
 }
 
