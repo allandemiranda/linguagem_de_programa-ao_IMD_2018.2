@@ -31,7 +31,7 @@ void imprimir_elementos(int *inicial){
 
 /**
  * @brief Função para trocar as posições dos elementos do vetor
- * @param Aponta para a posição inicial do vetor a ser usado na função
+ * @param Aponta para a posição inicial do vetor a ser usado na função 
  **/
 void trocar_posicao(int *inicial){
     for(int i(0), j(1); j<INTEIROS; i+=2, j+=2){
