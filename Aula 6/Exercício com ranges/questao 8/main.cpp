@@ -11,7 +11,7 @@
  * 
  * @param first Ponteiro inicial do vetor que denem o intervalo de elementos para examinar
  * @param last Ponteiro sequinte ao final do vetor que denem o intervalo de elementos para examinar
- * @return int* retorna um ponteiro após-o-nal do intervalo resultante
+ * @return int* retorna um ponteiro após-o-final do intervalo resultante
  */
 int * unique(int *first, int *last){
 
