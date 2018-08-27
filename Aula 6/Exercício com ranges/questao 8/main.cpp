@@ -14,7 +14,31 @@
  * @return int* retorna um ponteiro após-o-final do intervalo resultante
  */
 int * unique(int *first, int *last){
-
+    for(auto *slow = first; slow <= last; ++slow){ /*< Percorra todo o vetor */
+        if(slow == last){ // Verifique se já chegou ao final
+            return slow;
+        }
+        bool flag(true);
+        auto *fast = slow;
+        while(flag){
+            for(auto *before = (slow-1); before>=first; --before){ // Rode um vetor para ver se o número já seiu
+                if(*before == *fast){
+                    flag = false;
+                    break;
+                }
+            }
+            if(flag){
+                *slow = *fast;
+                break;
+            } else { // Rode um vetor para frente para buscar um número que não saiu
+                flag = true;
+                fast++;
+                if(fast == last){
+                    return slow;
+                }
+            }
+        }        
+    }
 }
 
 int main(void){
