@@ -1,6 +1,6 @@
 /**
  * @file main.cpp
- * @brief Questão 1 da lista
+ * @brief Questão 1 da lista exerccios_ranges.pdf
  * @copyright Allan de Miranda - BTI - IMD - UFRN - 2018.2
  */
 #include <iostream> // std::cout , std::cin 
