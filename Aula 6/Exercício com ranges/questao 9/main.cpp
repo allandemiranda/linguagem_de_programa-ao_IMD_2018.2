@@ -1,6 +1,6 @@
 /**
  * @file main.cpp
- * @brief Questão 8 da lista exerccios_ranges.pdf
+ * @brief Questão 9 da lista exerccios_ranges.pdf
  * @copyright Allan de Miranda - BTI - IMD - UFRN - 2018.2
  */
 #include <iostream> // std::cout , std::cin 
@@ -17,7 +17,7 @@ enum ball_t {B=0, W=1}; // Black and White.
  * @return int* retorna um ponteiro para o início da região das bolas BRANCAS
  */
 int * sort_marbles(int *first, int *last){
-    
+
 }
 
 int main(void){
