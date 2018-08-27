@@ -30,7 +30,7 @@ int main(void){
     std::cout << std::endl;
 
     // Mostre o novo tamanho de A, que seria 5.
-    std::cout << ">>> O comprimento ( lógico ) de A apos unique () é:   " << std::distance(std::begin(A), last) << " \n";
+    std::cout << ">>> O comprimento ( lógico ) de A após unique () é:   " << std::distance(std::begin(A), last) << " \n";
 
     return 0;
 }
