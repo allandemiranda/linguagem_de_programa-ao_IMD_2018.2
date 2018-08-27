@@ -17,14 +17,14 @@ enum ball_t {B=0, W=1}; // Black and White.
  * @return ball_t* retorna um ponteiro para o início da região das bolas BRANCAS
  */
 ball_t * sort_marbles(ball_t *first, ball_t *last){
-    for(auto *i = first; i<last; ++i){
+    for(auto *i = first; i<last; ++i){ /*< Ordenar o vetor */
         for(auto *j = i + 1; j<last; ++j){
             if(*i>*j){
                 std::swap(*i, *j);
             }            
         }
     }
-    for(auto *i = first; i<last; ++i){
+    for(auto *i = first; i<last; ++i){ /*< Verificar posição da mudança de cor */ 
         if(*i != *(i+1)){
             i++;
             return i;
