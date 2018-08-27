@@ -14,15 +14,27 @@ enum ball_t {B=0, W=1}; // Black and White.
  * 
  * @param first Ponteiros que denem o intervalo de elementos para ordenar
  * @param last Ponteiros que denem o intervalo de elementos para ordenar
- * @return int* retorna um ponteiro para o início da região das bolas BRANCAS
+ * @return ball_t* retorna um ponteiro para o início da região das bolas BRANCAS
  */
-int * sort_marbles(int *first, int *last){
-
+ball_t * sort_marbles(ball_t *first, ball_t *last){
+    for(auto *i = first; i<last; ++i){
+        for(auto *j = i + 1; j<last; ++j){
+            if(*i>*j){
+                std::swap(*i, *j);
+            }            
+        }
+    }
+    for(auto *i = first; i<last; ++i){
+        if(*i != *(i+1)){
+            i++;
+            return i;
+        }
+    }
 }
 
 int main(void){
     ball_t A[] = {W, B, B, W, W, B, W}; // input
-    auto size_A = std::sizeof(A) / std::sizeof(ball_t);
+    auto size_A = sizeof(A) / sizeof(ball_t);
     ball_t A_sorted[] = {B, B, B, W, W, W, W}; // expected output
     auto result = sort_marbles(std::begin(A), std::end(A));
 
