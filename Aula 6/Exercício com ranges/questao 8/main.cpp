@@ -7,7 +7,7 @@
 #include <iterator> // std::begin() , std::end(), std::distance()
 
 /**
- * @brief Frunção que elimina repetições de elementos no intervalo preservando a ordem relativas dos elementos úunicos que sobrarem
+ * @brief Frunção que elimina repetições de elementos no intervalo preservando a ordem relativas dos elementos únicos que sobrarem
  * 
  * @param first Ponteiro inicial do vetor que denem o intervalo de elementos para examinar
  * @param last Ponteiro sequinte ao final do vetor que denem o intervalo de elementos para examinar
