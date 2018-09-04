@@ -18,12 +18,8 @@ void printHeader(const std::vector <std::string> & fields_){
 	// Primeira linha
 	std::cout << "+";
 	for(auto i : fields_){
-		std::cout << "-";
-		int tamanho_palavra = i.size();
-		for(auto j(0); j<tamanho_palavra; ++j){
-			std::cout << "-";
-		}
-		std::cout << "-+"; 
+		std::cout << std::setw(i.size()+2) << std::setfill('-') << "";
+		std::cout << "+"; 
 	}
 	std::cout << std::endl;
 	
@@ -39,12 +35,8 @@ void printHeader(const std::vector <std::string> & fields_){
 	// Terceira linha
 	std::cout << "+";
 	for(auto i : fields_){
-		std::cout << "-";
-		int tamanho_palavra = i.size();
-		for(auto j(0); j<tamanho_palavra; ++j){
-			std::cout << "-";
-		}
-		std::cout << "-+"; 
+		std::cout << std::setw(i.size()+2) << std::setfill('-') << "";
+		std::cout << "+"; 
 	}
 	std::cout << std::endl;	
 }
