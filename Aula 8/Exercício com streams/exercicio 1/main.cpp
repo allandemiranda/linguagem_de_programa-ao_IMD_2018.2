@@ -19,23 +19,34 @@ void printHeader(const std::vector <std::string> & fields_){
 	std::cout << "+";
 	for(auto i : fields_){
 		std::cout << "-";
-		for(auto j(0); j<i.size(); ++j){
+		int tamanho_palavra = i.size();
+		for(auto j(0); j<tamanho_palavra; ++j){
 			std::cout << "-";
 		}
 		std::cout << "-+"; 
 	}
-
+	std::cout << std::endl;
+	
 	// Segunda linha
-	
-
-	// Calcular largura da tabela
-	auto largura_tabela(0); // Largura da tabela
+	std::cout << "|";
 	for(auto i : fields_){
-		largura_tabela += 2; // Antes da Palavra
-		largura_tabela += i.size(); // A Palavra
-		largura_tabela += 2; // Depois da Palavra
+		std::cout << " ";
+		std::cout << i;
+		std::cout << " |";
 	}
-	
+	std::cout << std::endl;
+
+	// Terceira linha
+	std::cout << "+";
+	for(auto i : fields_){
+		std::cout << "-";
+		int tamanho_palavra = i.size();
+		for(auto j(0); j<tamanho_palavra; ++j){
+			std::cout << "-";
+		}
+		std::cout << "-+"; 
+	}
+	std::cout << std::endl;	
 }
 
 int main(void){
