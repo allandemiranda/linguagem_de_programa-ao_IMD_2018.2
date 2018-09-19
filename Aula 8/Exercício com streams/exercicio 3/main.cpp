@@ -1,21 +1,15 @@
-#include <sstream>
-
 #include <iostream>
-#include <fstream>
-#include <string>
-#include <vector>
-#include <algorithm>
+#include <iomanip>
+#include <sstream>
 
 int getInteger(std::string msg_){
     std::cout << msg_ << std::endl;
-    int valor;
-    std::cin >> valor;
-    std::istringstream iss;
-    iss >> valor >> std::ws;
-    while(iss.fail() or !iss.eof()){
-        std::cout << "Valor incorreto" << std::endl;
-    }
-    return valor;
+    std::string input;        
+    std::getline (std::cin,input);
+    std::istringstream stream(input);
+    int number;        
+    stream >> number >> std :: ws;        
+    return number;   
 }
 
 int main(void){
