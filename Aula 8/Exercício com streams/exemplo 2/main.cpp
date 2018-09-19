@@ -2,7 +2,7 @@
 #include <fstream>
 #include <string>
 
-std::string askUserFileName(std::ifstream & ifs_, std::string msg = ""){
+std::string askUserFileName(std::ifstream & ifs_, std::string msg_ = ""){
     std::string fileName;
     while(true){
         std::cout << msg_;
