@@ -44,6 +44,23 @@
         "xstddef": "cpp",
         "xstring": "cpp",
         "xtr1common": "cpp",
-        "xutility": "cpp"
+        "xutility": "cpp",
+        "chrono": "cpp",
+        "functional": "cpp",
+        "cctype": "cpp",
+        "cstdarg": "cpp",
+        "cwctype": "cpp",
+        "atomic": "cpp",
+        "ratio": "cpp",
+        "thread": "cpp",
+        "cinttypes": "cpp",
+        "typeindex": "cpp",
+        "array": "cpp",
+        "*.tcc": "cpp",
+        "clocale": "cpp",
+        "deque": "cpp",
+        "unordered_map": "cpp",
+        "optional": "cpp",
+        "string_view": "cpp"
     }
 }
