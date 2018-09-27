@@ -1,5 +1,5 @@
 /**
- * @brief Questão 5
+ * @brief Questão 6
  * 
  * @file main.cpp
  * @author Allan de Miranda Silva
@@ -27,7 +27,9 @@ using Equal = bool (*)(const void *, const void *);
 using byte = unsigned char;
 
 /**
- * @brief 
+ * @brief function called find that receives a range [ first ; last ) over an array,
+ * a target value, and returns a pointer (iterator) to the first element in the range that is
+ * equal to the value passed to the function
  * 
  * @param first the range of elementos to examine
  * @param last the range of elementos to examine
