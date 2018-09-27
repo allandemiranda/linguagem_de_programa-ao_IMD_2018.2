@@ -11,78 +11,71 @@
 #include <algorithm>
 #include <cstring>
 
+/* Equalite function for int */
+bool INT_equal_to( const void *a, const void *b )
+{ 
+	const int *a_ = static_cast< const int * >(a);
+	const int *b_ = static_cast< const int * >(b);
+
+    return *a_ == *b_;
+};
+
+// -------
+
+using Equal = bool (*)(const void *, const void *);
+
 using byte = unsigned char;
 
 /**
- * @brief equal
+ * @brief function called unique that receives a a range [ first ; last ) over an
+ * array, reorders the elements in the range [ first , last ) in such a way that all unique
+ * elements should appear at the beginning of the range
  * 
- * @param first 
- * @param last 
- * @param s_first 
- * @return true if the first range if equal to the range
- * @return false otherwise
+ * @param first the range of elementos to examine
+ * @param last the range of elementos to examine
+ * @param size size of each element in the range in bytes
+ * @param eq binary function that returns true if the elements are equal, or false otherwise
+ * @return void* A pointer to the address just past the last element of the range with unique elements.
  */
-bool equal(const void * first , const void * last , const void * s_first){
-    byte *esquerda = static_cast<byte*>(const_cast<void*>(first));
-    byte *direita = static_cast<byte*>(const_cast<void*>(last));
+void * unique( void * first , void * last , size_t size , Equal eq ){
+    byte * busca_frente = static_cast<byte*>(first);
+    byte * salvador = static_cast<byte*>(first);
+    
+    byte * ultimo = static_cast<byte*>(last);
 
-    byte *esquerda_segundo = static_cast<byte*>(const_cast<void*>(s_first));
-
-    while(esquerda<direita){
-        if(*esquerda == *esquerda_segundo){
-            ++esquerda;
-            ++esquerda_segundo;            
-        } else {
-            return false;
-        }
-    }
-    return true;
-}
-
-/**
- * @brief equal (2)
- * 
- * @param first 
- * @param last 
- * @param s_first 
- * @param s_last 
- * @return true if the first range if equal to the range
- * @return false otherwise
- */
-bool equal(const void * first , const void * last , const void * s_first, const void * s_last){
-    byte *esquerda = static_cast<byte*>(const_cast<void*>(first));
-    byte *direita = static_cast<byte*>(const_cast<void*>(last));
-
-    byte *esquerda_segundo = static_cast<byte*>(const_cast<void*>(s_first));
-    byte *direita_segundo = static_cast<byte*>(const_cast<void*>(s_last));
-
-    if(std::distance(esquerda,direita) == std::distance(esquerda_segundo,direita_segundo)){   
-        while(esquerda<direita){
-            if(*esquerda == *esquerda_segundo){
-                ++esquerda;
-                ++esquerda_segundo;                
-            } else {
-                return false;
+    while(busca_frente<ultimo){
+        byte * busca_anteriores = static_cast<byte*>(first);
+        while(busca_anteriores<salvador){
+            if(eq(busca_frente,busca_anteriores)){
+                busca_frente+=size;
+                busca_anteriores = static_cast<byte*>(first);
+                continue;                
             }
+            busca_anteriores+=size;
         }
-        return true;
-    } else {
-        return false;
+        std::memcpy(salvador,busca_frente,size);
+        busca_frente+=size;
+        salvador+=size;
     }
+    return salvador-=size;
 }
 
 int main(int argc, char const *argv[])
 {
-    int A[] = {1,2,3,4,5,6,7,8,9};
-    int B[] = {1,2,3,4,5,6,7,8,9};
+    int A[] = {1,2,3,4,3,5,6,7,1,8,9,1,5};
 
-    if(equal(std::begin(A),std::end(A),std::begin(B))){
-        std::cout << "EQUAL 1 OK" << std::endl;
+    for(int i : A){
+        std::cout << i << " ";
     }
+    std::cout << std::endl;
 
-    if(equal(std::begin(A),std::end(A),std::begin(B),std::end(B))){
-        std::cout << "EQUAL 2 OK" << std::endl;
+    int *last = (int*)(unique(std::begin(A),std::end(A),sizeof(int),INT_equal_to));
+
+    for(int *i(std::begin(A)); i<last; i++){
+        std::cout << *i << " ";
     }
+    std::cout << std::endl;
+
 
     return 0;
 }
