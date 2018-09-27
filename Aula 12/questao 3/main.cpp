@@ -3,7 +3,7 @@
  * 
  * @file main.cpp
  * @author Allan de Miranda Silva
- * @date 2018-09-25
+ * @date 2018-09-24
  */
 
 #include <iostream>
@@ -20,7 +20,7 @@ using byte = unsigned char;
  * @param last the range of elementos to examine
  * @param d_first the range of elementos to examine to copy vector
  * @param size size of each element in the range in bytes
- * @return void* 
+ * @return void* Pointer to the memory area that contains the copy of the original range
  */
 void * copy ( const void * first , const void * last , const void * d_first , size_t size ){
     byte *esquerda = static_cast<byte*>(const_cast<void*>(first));
