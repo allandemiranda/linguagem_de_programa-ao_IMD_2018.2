@@ -11,8 +11,6 @@
 #include <algorithm>
 #include <cstring>
 
-using byte = unsigned char;
-
 /**
  * @brief binary function
  * 
@@ -27,6 +25,10 @@ bool comp_ints(const void *a, const void *b){
 
     return *aa < *bb;
 }
+
+// ------
+
+using byte = unsigned char;
 
 using Compare = bool (*)(const void *, const void *);
 
