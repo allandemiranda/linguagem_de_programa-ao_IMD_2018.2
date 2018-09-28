@@ -26,13 +26,11 @@ void * copy ( const void * first , const void * last , const void * d_first , si
     byte *esquerda = static_cast<byte*>(const_cast<void*>(first));
     byte *direita = static_cast<byte*>(const_cast<void*>(last));
     byte *primeiro = static_cast<byte*>(const_cast<void*>(d_first));
-
     while(esquerda<direita){
         std::memcpy(primeiro,esquerda,size);
         primeiro+=size;
         esquerda+=size;
     }
-
     return const_cast<void*>(d_first);
 }
 

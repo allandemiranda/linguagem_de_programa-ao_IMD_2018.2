@@ -26,7 +26,7 @@ int STR_sort_comp( const void *a, const void *b ){
 
 // ------
 
-using ComparePred = int (*)(const void *, const void *);
+using PredComp = int (*) (const void *, const void *);
 
 using byte = unsigned char;
 
@@ -38,7 +38,7 @@ using byte = unsigned char;
  * @param size size of each element in the array in bytes
  * @param comp comparison function which returns ​a negative integer value if the first argument is less than the second, a positive integer value if the first argument is greater than the second and zero if the arguments are equal.
  */
-void sort( void *ptr, std::size_t count, std::size_t size, ComparePred comp ){
+void sort( void *ptr, std::size_t count, std::size_t size, PredComp comp ){
     byte * primeiro = static_cast<byte*>(ptr);
     byte swap[size];
     size_t min;

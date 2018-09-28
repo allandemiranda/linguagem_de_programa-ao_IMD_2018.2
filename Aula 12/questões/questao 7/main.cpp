@@ -35,8 +35,7 @@ using byte = unsigned char;
  */
 bool all_of ( const void * first , const void * last , size_t size , Predicate p ){
     byte *esquerda = static_cast<byte*>(const_cast<void*>(first));
-    byte *direita = static_cast<byte*>(const_cast<void*>(last));    
-
+    byte *direita = static_cast<byte*>(const_cast<void*>(last)); 
     while(esquerda<direita){
         if(false == p(esquerda)){
             return false;
@@ -57,13 +56,11 @@ bool all_of ( const void * first , const void * last , size_t size , Predicate p
  * @return false otherwise
  */
 bool any_of( const void * first , const void * last , size_t size , Predicate p ){
-    if(std::distance(first,last) == 0){
-        return true;
-    }
-
     byte *esquerda = static_cast<byte*>(const_cast<void*>(first));
-    byte *direita = static_cast<byte*>(const_cast<void*>(last));    
-
+    byte *direita = static_cast<byte*>(const_cast<void*>(last)); 
+    if(std::distance(esquerda,direita) == 0){
+        return true;
+    }     
     while(esquerda<direita){
         if(p(esquerda)){
             return true;
@@ -85,8 +82,7 @@ bool any_of( const void * first , const void * last , size_t size , Predicate p 
  */
 bool none_of( const void * first , const void * last , size_t size , Predicate p ){
     byte *esquerda = static_cast<byte*>(const_cast<void*>(first));
-    byte *direita = static_cast<byte*>(const_cast<void*>(last));    
-
+    byte *direita = static_cast<byte*>(const_cast<void*>(last));
     while(esquerda<direita){
         if(p(esquerda)){
             return false;

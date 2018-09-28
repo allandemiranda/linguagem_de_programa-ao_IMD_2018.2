@@ -14,7 +14,7 @@
 using byte = unsigned char;
 
 /**
- * @brief equal
+ * @brief equal (1)
  * 
  * @param first 
  * @param last 
@@ -25,9 +25,7 @@ using byte = unsigned char;
 bool equal(const void * first , const void * last , const void * s_first){
     byte *esquerda = static_cast<byte*>(const_cast<void*>(first));
     byte *direita = static_cast<byte*>(const_cast<void*>(last));
-
     byte *esquerda_segundo = static_cast<byte*>(const_cast<void*>(s_first));
-
     while(esquerda<direita){
         if(*esquerda == *esquerda_segundo){
             ++esquerda;
@@ -52,10 +50,8 @@ bool equal(const void * first , const void * last , const void * s_first){
 bool equal(const void * first , const void * last , const void * s_first, const void * s_last){
     byte *esquerda = static_cast<byte*>(const_cast<void*>(first));
     byte *direita = static_cast<byte*>(const_cast<void*>(last));
-
     byte *esquerda_segundo = static_cast<byte*>(const_cast<void*>(s_first));
     byte *direita_segundo = static_cast<byte*>(const_cast<void*>(s_last));
-
     if(std::distance(esquerda,direita) == std::distance(esquerda_segundo,direita_segundo)){   
         while(esquerda<direita){
             if(*esquerda == *esquerda_segundo){

@@ -21,19 +21,15 @@ using byte = unsigned char;
  * @param size size of each element in the range in bytes
  * @return void* Pointer to the memory area that contains the copy of the original range
  */
-void * clone ( const void * first , const void * last , size_t size ){
+void * clone( const void * first , const void * last , size_t size ){
     byte *esquerda = static_cast<byte*>(const_cast<void*>(first));
     byte *direita = static_cast<byte*>(const_cast<void*>(last));
-
     byte *clone_um = new(byte[std::distance(esquerda,direita)]);
     byte *clone_dois = new(byte[std::distance(esquerda,direita)]);
-
     for(byte i(0); i<(std::distance(esquerda,direita)); ++i){
         *(clone_um+i) = *(esquerda+i);
     }    
-
     std::memcpy(clone_dois, clone_um, std::distance(esquerda,direita));
-
     return clone_dois;
 }
 

@@ -35,17 +35,14 @@ using byte = unsigned char;
 const void * find_if(const void * first , const void * last , size_t size , Predicate p ){
     byte *esquerda = static_cast<byte*>(const_cast<void*>(first));
     byte *direita = static_cast<byte*>(const_cast<void*>(last));
-
     while(esquerda<direita){
         if(p(esquerda)){
             return esquerda;
         }
         esquerda += size;
     }
-
     esquerda -= size;
     return esquerda;
-
 }
 
 int main(int argc, char const *argv[])

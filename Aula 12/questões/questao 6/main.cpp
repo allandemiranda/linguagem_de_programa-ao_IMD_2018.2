@@ -42,17 +42,14 @@ const void * find(const void * first, const void * last, size_t size, const void
     byte *esquerda = static_cast<byte*>(const_cast<void*>(first));
     byte *direita = static_cast<byte*>(const_cast<void*>(last));
     byte *valor = static_cast<byte*>(const_cast<void*>(value));
-
     while(esquerda<direita){
         if(eq(esquerda,valor)){
             return esquerda;
         }
         esquerda += size;
     }
-
     esquerda -= size;
     return esquerda;
-
 }
 
 int main(int argc, char const *argv[])

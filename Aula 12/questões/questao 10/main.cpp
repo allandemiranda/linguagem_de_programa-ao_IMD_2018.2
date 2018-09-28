@@ -37,9 +37,7 @@ using byte = unsigned char;
  */
 void * partition( void * first , void * last , size_t size , Predicate p ){
     byte * salvador = static_cast<byte*>(first);
-
     byte * ultimo = static_cast<byte*>(last);
-
     while(salvador<ultimo){
         if(p(salvador)){
             salvador+=size;            

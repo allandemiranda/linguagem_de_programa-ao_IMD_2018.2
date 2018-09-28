@@ -1,0 +1,51 @@
+Determining if the pthread_create exist failed with the following output:
+Change Dir: /root/Documentos/linguagem_de_programa-ao_IMD_2018.2/Aula 12/lib_graal/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_fd0b8/fast"
+/usr/bin/make -f CMakeFiles/cmTC_fd0b8.dir/build.make CMakeFiles/cmTC_fd0b8.dir/build
+make[1]: Entering directory '/root/Documentos/linguagem_de_programa-ao_IMD_2018.2/Aula 12/lib_graal/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_fd0b8.dir/CheckSymbolExists.cxx.o
+/usr/bin/c++     -o CMakeFiles/cmTC_fd0b8.dir/CheckSymbolExists.cxx.o -c "/root/Documentos/linguagem_de_programa-ao_IMD_2018.2/Aula 12/lib_graal/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx"
+Linking CXX executable cmTC_fd0b8
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_fd0b8.dir/link.txt --verbose=1
+/usr/bin/c++       CMakeFiles/cmTC_fd0b8.dir/CheckSymbolExists.cxx.o  -o cmTC_fd0b8 
+/usr/bin/ld: CMakeFiles/cmTC_fd0b8.dir/CheckSymbolExists.cxx.o: na função "main":
+CheckSymbolExists.cxx:(.text+0x1b): referência não definida para "pthread_create"
+collect2: error: ld returned 1 exit status
+make[1]: *** [CMakeFiles/cmTC_fd0b8.dir/build.make:87: cmTC_fd0b8] Error 1
+make[1]: Leaving directory '/root/Documentos/linguagem_de_programa-ao_IMD_2018.2/Aula 12/lib_graal/CMakeFiles/CMakeTmp'
+make: *** [Makefile:121: cmTC_fd0b8/fast] Error 2
+
+File /root/Documentos/linguagem_de_programa-ao_IMD_2018.2/Aula 12/lib_graal/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx:
+/* */
+#include <pthread.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef pthread_create
+  return ((int*)(&pthread_create))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the function pthread_create exists in the pthreads failed with the following output:
+Change Dir: /root/Documentos/linguagem_de_programa-ao_IMD_2018.2/Aula 12/lib_graal/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_93c2f/fast"
+/usr/bin/make -f CMakeFiles/cmTC_93c2f.dir/build.make CMakeFiles/cmTC_93c2f.dir/build
+make[1]: Entering directory '/root/Documentos/linguagem_de_programa-ao_IMD_2018.2/Aula 12/lib_graal/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_93c2f.dir/CheckFunctionExists.cxx.o
+/usr/bin/c++    -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_93c2f.dir/CheckFunctionExists.cxx.o -c "/root/Documentos/linguagem_de_programa-ao_IMD_2018.2/Aula 12/lib_graal/CMakeFiles/CheckLibraryExists/CheckFunctionExists.cxx"
+Linking CXX executable cmTC_93c2f
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_93c2f.dir/link.txt --verbose=1
+/usr/bin/c++   -DCHECK_FUNCTION_EXISTS=pthread_create    CMakeFiles/cmTC_93c2f.dir/CheckFunctionExists.cxx.o  -o cmTC_93c2f -lpthreads 
+/usr/bin/ld: não foi possível localizar -lpthreads
+collect2: error: ld returned 1 exit status
+make[1]: *** [CMakeFiles/cmTC_93c2f.dir/build.make:87: cmTC_93c2f] Error 1
+make[1]: Leaving directory '/root/Documentos/linguagem_de_programa-ao_IMD_2018.2/Aula 12/lib_graal/CMakeFiles/CMakeTmp'
+make: *** [Makefile:121: cmTC_93c2f/fast] Error 2
+
+

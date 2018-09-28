@@ -45,16 +45,13 @@ const void * min ( const void * first , const void * last , size_t size , Compar
     byte *esquerda = static_cast<byte*>(const_cast<void*>(first));
     byte *direita = static_cast<byte*>(const_cast<void*>(last));
     byte *menor = static_cast<byte*>(const_cast<void*>(first));
-
     while(esquerda<direita){
         if(cmp(esquerda,menor)){
             std::memcpy(menor,esquerda,size);
         }
         esquerda += size;
     }
-
     return menor;
-
 }
 
 int main(int argc, char const *argv[])

@@ -1,0 +1,8 @@
+/root/Documentos/linguagem_de_programa-ao_IMD_2018.2/Aula 12/lib_graal/CMakeFiles/install/strip.dir
+/root/Documentos/linguagem_de_programa-ao_IMD_2018.2/Aula 12/lib_graal/CMakeFiles/install/local.dir
+/root/Documentos/linguagem_de_programa-ao_IMD_2018.2/Aula 12/lib_graal/CMakeFiles/run_tests.dir
+/root/Documentos/linguagem_de_programa-ao_IMD_2018.2/Aula 12/lib_graal/CMakeFiles/edit_cache.dir
+/root/Documentos/linguagem_de_programa-ao_IMD_2018.2/Aula 12/lib_graal/CMakeFiles/rebuild_cache.dir
+/root/Documentos/linguagem_de_programa-ao_IMD_2018.2/Aula 12/lib_graal/CMakeFiles/list_install_components.dir
+/root/Documentos/linguagem_de_programa-ao_IMD_2018.2/Aula 12/lib_graal/CMakeFiles/graal.dir
+/root/Documentos/linguagem_de_programa-ao_IMD_2018.2/Aula 12/lib_graal/CMakeFiles/install.dir

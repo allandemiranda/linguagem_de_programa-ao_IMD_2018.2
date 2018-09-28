@@ -39,10 +39,8 @@ using byte = unsigned char;
  */
 void * unique( void * first , void * last , size_t size , Equal eq ){
     byte * busca_frente = static_cast<byte*>(first);
-    byte * salvador = static_cast<byte*>(first);
-    
+    byte * salvador = static_cast<byte*>(first);    
     byte * ultimo = static_cast<byte*>(last);
-
     while(busca_frente<ultimo){
         byte * busca_anteriores = static_cast<byte*>(first);
         while(busca_anteriores<salvador){

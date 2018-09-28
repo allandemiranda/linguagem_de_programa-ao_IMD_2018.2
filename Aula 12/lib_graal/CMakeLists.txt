@@ -28,7 +28,7 @@ include_directories( include )
 add_library(graal STATIC "src/graal.cpp")
 
 #define C++11 as the standard.
-#target_compile_features(iranges PUBLIC cxx_std_11)
+#target_compile_features(iranges PUBLIC cxx_std_17)
 
 set ( APP_SOURCE_DIR "app" )
 
@@ -50,5 +50,5 @@ add_executable(run_tests ${SOURCES_TEST})
 target_link_libraries(run_tests PRIVATE ${GTEST_LIBRARIES} PRIVATE graal PRIVATE pthread )
 
 #define C++11 as the standard.
-#set_property(TARGET run_tests PROPERTY CXX_STANDARD 11)
-#target_compile_features(run_tests PUBLIC cxx_std_11)
+#set_property(TARGET run_tests PROPERTY CXX_STANDARD 17)
+#target_compile_features(run_tests PUBLIC cxx_std_17)

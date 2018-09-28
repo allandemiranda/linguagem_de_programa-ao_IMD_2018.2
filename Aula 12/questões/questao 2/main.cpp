@@ -23,14 +23,12 @@ using byte = unsigned char;
 void reverse ( void * first , void * last , size_t size ){
     byte *primeiro = static_cast<byte*>(first);
     byte *segundo = static_cast<byte*>(last);
-    //byte *temporario;
+    byte temporario[size];
     segundo-=size;
-
     while(primeiro<segundo){       
-        //std::memcpy(temporario,primeiro,size);
-        //std::memcpy(primeiro,segundo,size);
-        //std::memcpy(segundo,temporario,size);
-        std::swap(*primeiro, *segundo);
+        std::memcpy(temporario,primeiro,size);
+        std::memcpy(primeiro,segundo,size);
+        std::memcpy(segundo,temporario,size);
         primeiro+=size;
         segundo-=size; 
     }
