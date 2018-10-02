@@ -19,13 +19,14 @@
 class Fraction{
         int numerador_faction;
         int denominador_fraction;
-        int mdc(Fraction);
+        int mdc(int, int);
     public:
         Fraction(int = 0, int = 0); // Pegar a fração
         void set_(int, int); // Atualizar a fração
         bool is_proper(Fraction); // Verifica e retorna true se a fração é própria, ou false, caso contrário
         void reduce(Fraction); // Realize a redução  da fração
         int make_proper(Fraction);
+        // Operadores
         Fraction operator * (const Fraction&);
         Fraction operator / (const Fraction&);
         Fraction operator + (const Fraction&);

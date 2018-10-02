@@ -58,10 +58,13 @@ bool Fraction::is_proper(Fraction nova_facao){
  * @param nova_fracao 
  * @return int O valor que divide o numerador e o denominador
  */
-int Fraction::mdc(Fraction nova_fracao){
-    int n_1 = nova_fracao.numerador_faction;
-    int n_2 = nova_fracao.denominador_fraction;
-    int resto = (nova_fracao.numerador_faction % nova_fracao.denominador_fraction);
+int Fraction::mdc(int n_1, int n_2){
+    if(n_2>n_1){
+        int temp = n_1;
+        n_1 = n_2;
+        n_2 = temp;
+    }
+    int resto = (n_1 % n_2);
     while(resto!=0){
         n_1 = n_2;
         n_2 = resto;
@@ -76,7 +79,7 @@ int Fraction::mdc(Fraction nova_fracao){
  * @param nova_facao 
  */
 void Fraction::reduce(Fraction nova_facao){
-    int num_redutor = Fraction::mdc(nova_facao);
+    int num_redutor = Fraction::mdc(nova_facao.numerador_faction, nova_facao.denominador_fraction);
     int n_1 = (nova_facao.numerador_faction / num_redutor);
     int n_2 = (nova_facao.denominador_fraction / num_redutor);
     nova_facao.set_(n_1,n_2);
@@ -118,5 +121,33 @@ Fraction Fraction::operator/(const Fraction& param){
     Fraction temp;
     temp.numerador_faction = denominador_fraction * param.denominador_fraction;
     temp.denominador_fraction = numerador_faction * param.numerador_faction;
+    return temp;
+}
+
+/**
+ * @brief Operador soma
+ * 
+ * @param param 
+ * @return Fraction 
+ */
+Fraction Fraction::operator+(const Fraction& param){
+    Fraction temp;
+    int novo_denominador = Fraction::mdc(denominador_fraction, param.denominador_fraction);
+    temp.numerador_faction = ((novo_denominador/denominador_fraction)*numerador_faction)+((novo_denominador/param.denominador_fraction)*param.numerador_faction);
+    temp.denominador_fraction = novo_denominador;
+    return temp;
+}
+
+/**
+ * @brief Operador subitração
+ * 
+ * @param param 
+ * @return Fraction 
+ */
+Fraction Fraction::operator-(const Fraction& param){
+    Fraction temp;
+    int novo_denominador = Fraction::mdc(denominador_fraction, param.denominador_fraction);
+    temp.numerador_faction = ((novo_denominador/denominador_fraction)*numerador_faction)-((novo_denominador/param.denominador_fraction)*param.numerador_faction);
+    temp.denominador_fraction = novo_denominador;
     return temp;
 }
