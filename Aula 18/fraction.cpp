@@ -99,6 +99,21 @@ int Fraction::make_proper(Fraction nova_facao){
 }
 
 /**
+ * @brief 
+ * 
+ * @param nova_facao 
+ * @return true possui um numerador zero e um denominador diferente de zero
+ * @return false 
+ */
+bool Fraction::is_zero(Fraction nova_facao){
+    if((nova_facao.numerador_faction == 0) and (nova_facao.numerador_faction != 0)){
+        return true;
+    } else {
+        return false;
+    }
+}
+
+/**
  * @brief Operador de multiplicação
  * 
  * @param param 

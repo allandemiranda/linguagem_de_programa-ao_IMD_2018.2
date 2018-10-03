@@ -26,6 +26,7 @@ class Fraction{
         bool is_proper(Fraction); // Verifica e retorna true se a fração é própria, ou false, caso contrário
         void reduce(Fraction); // Realize a redução  da fração
         int make_proper(Fraction);
+        bool is_zero(Fraction);
         // Operadores
         Fraction operator * (const Fraction&);
         Fraction operator / (const Fraction&);

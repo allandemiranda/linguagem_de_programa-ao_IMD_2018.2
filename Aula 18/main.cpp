@@ -8,3 +8,9 @@
  * @copyright Copyright (c) 2018
  * 
  */
+
+int main(int argc, char const *argv[])
+{
+    
+    return 0;
+}
